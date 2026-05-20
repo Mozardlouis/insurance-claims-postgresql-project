@@ -1,0 +1,2 @@
+CREATE DATABASE insurance;
+CREATE SCHEMA IF NOT EXISTS insurance;
