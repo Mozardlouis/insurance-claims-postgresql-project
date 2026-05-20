@@ -15,23 +15,22 @@ GRANT level3 TO level4;
 
 
 --Role de level1
-GRANT CONNECT ON DATABASE insurance_claims_db TO level1;
+GRANT CONNECT ON DATABASE insurance TO level1;
 GRANT USAGE ON SCHEMA public TO level1;
 
-GRANT SELECT ON policy_types TO level1;
-GRANT SELECT ON contract_types TO level1;
+--GRANT SELECT ON policy_types TO level1;
+--GRANT SELECT ON contract_types TO level1;
 GRANT SELECT ON claim_types TO level1;
 GRANT SELECT ON claim_statuses TO level1;
 
 GRANT SELECT (
-    customer_id,
+    policyholder_id,
     first_name,
     last_name,
-    birth_date,
     gender_id,
     city
 )
-ON customers TO level1;
+ON policyholders TO level1;
 
 --Role de level2
 GRANT SELECT ON policies TO level2;
@@ -49,4 +48,4 @@ GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO level3;
 --Accès complet
 GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO level4;
 GRANT USAGE, SELECT, UPDATE ON ALL SEQUENCES IN SCHEMA public TO level4;
-GRANT SELECT ON customers TO level4; --pour un accès complet à la table
+GRANT SELECT ON policyholders TO level4; --pour un accès complet à la table

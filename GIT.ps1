@@ -1,3 +1,7 @@
+git remote add origin https://github.com/Mozardlouis/insurance-claims-postgresql-project.git
+git branch -M main
+git push -u origin main
+
 Write-Host "Git status..."
 git status
 

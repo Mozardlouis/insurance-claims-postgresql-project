@@ -11,4 +11,5 @@ VALUES
 ('Home Insurance'),
 ('Health Insurance'),
 ('Life Insurance'),
-('Travel Insurance');
+('Travel Insurance'),
+('No Reference');

@@ -58,7 +58,7 @@ CREATE TABLE insurance.claims (
 
 CREATE TABLE insurance.payments (
     payment_id SERIAL PRIMARY KEY,
-    claim_id INT NOT NULL REFERENCES claims(claim_id),
+    claim_id INT NOT NULL REFERENCES insurance.claims(claim_id),
     payment_date DATE NOT NULL,
     payment_amount NUMERIC(12,2) NOT NULL CHECK (payment_amount > 0),
     payment_method VARCHAR(50) NOT NULL,
