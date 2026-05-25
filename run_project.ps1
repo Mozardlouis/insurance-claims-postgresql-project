@@ -3,7 +3,7 @@
 $PsqlPath = "C:\Program Files\PostgreSQL\18\bin\psql.exe"
 $DatabaseName = "insurance"
 $UserName = "postgres"
-$env:PGPASSWORD ="CHANGE_ME"
+$env:PGPASSWORD = Get-Content ".\.pg_password.txt" -Raw
 
 
 Write-Host "Step 1 - Creating database..."
