@@ -78,8 +78,11 @@ insurance-claims-postgresql-project/
 ├── data/
 ├── docs/
 └── scripts/
+```
 ---
 # Modèle de données
+
+```text
 | Table                         | Description                      |
 | ----------------------------- | -------------------------------- |
 | `insurance.ref_gender`        | Référentiel des genres           |
@@ -89,6 +92,9 @@ insurance-claims-postgresql-project/
 | `insurance.claims`            | Déclarations de sinistres        |
 | `insurance.payments`          | Paiements liés aux sinistres     |
 
+
+```
+
 # Gestion des roles
 
 le niveau des accès définis dans ce projet est le schéma hiérarchisé avec des héritiers.
@@ -97,13 +103,13 @@ level2
 level3
 level4
 
-**# Automatisation Powershell**
+# ** Automatisation Powershell**
 
 Le projet peut s'exécuter automatiquement et entièrement via Powershell
 .\run_project.ps1
 Le script exécute les fichiers dans le bon ordre (indiqué)
 
-**# Évolutions possibles**
+# ** Évolutions possibles**
 
 Les prochaines évolutions envisagées :
 
@@ -118,7 +124,7 @@ Les prochaines évolutions envisagées :
    - Row-Level Security
 
 
-**# Technologies utilisées**
+# ** Technologies utilisées**
    - PostgreSQL
    - pgAdmin
    - VS Code
@@ -127,6 +133,6 @@ Les prochaines évolutions envisagées :
    - GitHub
 
 
- **#  Auteur**
+ # **  Auteur**
    Mozard LOUIS
    Data Engineer, Data Analyst
