@@ -1,0 +1,17 @@
+# Secrets
+.pg_password.txt
+.env
+
+# VS Code local config
+.vscode/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+
+# PostgreSQL backups
+*.dump
+*.backup

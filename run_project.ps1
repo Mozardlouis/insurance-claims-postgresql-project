@@ -3,11 +3,19 @@
 $PsqlPath = "C:\Program Files\PostgreSQL\18\bin\psql.exe"
 $DatabaseName = "insurance"
 $UserName = "postgres"
-$env:PGPASSWORD = Get-Content ".\.pg_password.txt" -Raw
+$env:PGPASSWORD =(Get-Content ".\.pg_password.txt" -Raw).Trim()
 
 
-Write-Host "Step 1 - Creating database..."
-& $PsqlPath -U $UserName -f "sql/01_create_schema.sql"
+
+Write-Host "Step 00 - Dropping existing database..."
+& $PsqlPath -U $UserName -d postgres -c "DROP DATABASE IF EXISTS $DatabaseName WITH (FORCE);"
+
+Write-Host "Step 0 - Creating database..."
+& $PsqlPath -U $UserName -d postgres -c "CREATE DATABASE $DatabaseName;"
+
+
+Write-Host "Step 1 - Creating schema..."
+& $PsqlPath -U $UserName -d $DatabaseName -f "sql/01_create_schema.sql"
 
 Write-Host "Step 2 - Creating tables..."
 & $PsqlPath -U $UserName -d $DatabaseName -f "sql/02_create_tables.sql"
@@ -29,6 +37,6 @@ Write-Host "Step 7 - Creating roles and permissions..."
 
 Write-Host "Step 8 - Running test queries..."
 & $PsqlPath -U $UserName -d $DatabaseName -f "sql/08_data_ingestion.sql"
-Remove-Item $Env:PGPASSWORD
+Remove-Item Env:PGPASSWORD
 
 Write-Host "Project execution completed."
